@@ -1,0 +1,38 @@
+{
+  "name": "@diyorbek788/netlog-brief",
+  "version": "0.1.0",
+  "description": "Offline, aggregate-only Chromium NetLog comparisons for bug reports, in English and Uzbek.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diyorbek788/Ideamean.git"
+  },
+  "bin": {
+    "netlog-brief": "./bin/netlog-brief.mjs"
+  },
+  "exports": {
+    ".": "./src/netlog.mjs",
+    "./report": "./src/report.mjs"
+  },
+  "files": [
+    "src",
+    "bin",
+    "index.html",
+    "examples",
+    "LICENSE",
+    "README.md",
+    "README.uz.md",
+    "CONTRIBUTING.md",
+    "docs"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "build": "node scripts/build.mjs",
+    "check:build": "node scripts/build.mjs --check",
+    "test:chromium": "node scripts/chromium-smoke.mjs"
+  }
+}

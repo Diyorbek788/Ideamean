@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="@@CSP@@">
+  <meta name="color-scheme" content="light">
+  <title>NetLog Brief</title>
+  <style>@@CSS@@</style>
+</head>
+<body>
+  <a class="skip" href="#work" data-ui="skip">Skip to workspace</a>
+  <header class="mast">
+    <div class="mast-in wrap">
+      <div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>NetLog Brief</div>
+      <label class="language"><span data-ui="language">Language</span>
+        <select id="language"><option value="en">English</option><option value="uz">O‘zbekcha</option></select>
+      </label>
+    </div>
+  </header>
+  <main id="work" class="wrap">
+    <div class="hero">
+      <div><h1 data-ui="headline">Compare network captures.</h1>
+      <p data-ui="intro">Turn Chromium NetLog files into a short bug report. See which errors, responses and timings changed between two runs.</p></div>
+      <div class="local"><span class="lamp" aria-hidden="true"></span><div><strong data-ui="local">Local processing</strong>
+        <small data-ui="localDetail">Files stay in this browser tab.</small></div></div>
+    </div>
+
+    <section aria-labelledby="inputs-title">
+      <div class="section-line"><h2 id="inputs-title" data-ui="inputs">Input captures</h2>
+        <div class="link-actions"><button type="button" id="demo" data-ui="demo">Load example</button>
+          <button type="button" id="reset" data-ui="clear">Clear all</button></div></div>
+      <div class="slots" id="slots"></div>
+      <p id="notice" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="results" aria-labelledby="results-title">
+      <div class="section-line results-title"><div><h2 id="results-title" data-ui="results">Evidence</h2><p id="mode"></p></div>
+        <div class="exports"><button id="save-md" data-ui="downloadMd">Save Markdown</button>
+          <button id="save-json" data-ui="downloadJson">Save JSON</button></div></div>
+      <div id="empty" class="empty" data-ui="empty">Choose a capture or load the example to see a report.</div>
+      <div id="filled" hidden>
+        <div class="stats" id="stats"></div>
+        <div class="views" role="group" id="views" aria-label="Report sections">
+          <button data-view="signals" aria-pressed="true" data-ui="signals">Findings</button>
+          <button data-view="timing" aria-pressed="false" data-ui="timing">Timing &amp; coverage</button>
+          <button data-view="export" aria-pressed="false" data-ui="preview">Report preview</button>
+        </div>
+        <div id="panel"></div>
+        <p id="scope" class="scope"></p>
+      </div>
+    </section>
+    <details class="guide">
+      <summary data-ui="help">How to record a capture</summary>
+      <ol><li data-ui="g1">Open chrome://net-export in Chrome or edge://net-export in Edge.</li>
+      <li data-ui="g2">Keep the default privacy mode. Start logging, reproduce the issue in another tab, then stop logging.</li>
+      <li data-ui="g3">Choose the saved JSON for A. To compare, repeat the same action under the second condition and load it as B. Short, similar runs make the counts easier to interpret.</li></ol>
+    </details>
+    <footer><span>NetLog Brief</span><span>MIT · v0.1.0</span></footer>
+  </main>
+  <noscript>Enable JavaScript to analyze a file locally, or use the Node.js command line tool.</noscript>
+  <script type="module">@@SCRIPT@@</script>
+</body>
+</html>
